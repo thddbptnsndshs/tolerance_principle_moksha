@@ -65,7 +65,7 @@ def get_candidates(path):
     return cand_df
 
 def run_tolerance_principle(candidates):
-    theta = candidates.shape[0] / math.log(candidates.shape[0])
+    theta = candidates.hg_context.sum() / math.log(candidates.hg_context.sum())
     if config['live_editing']:
         candidates = candidates.loc[candidates.hg_context == 'TRUE']
         loan_count = (candidates.loan == 'TRUE').sum()
